@@ -7,12 +7,11 @@ const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|;:,<.>/?';
 const nums = '0123456789';
 const alphabet = katakana + latin + nums;
 const fontSize = 14;
-const columns = canvas.width/fontSize;
+const columns = canvas.width / fontSize;
 const signinBtn = document.querySelector('.signin');
 const signupBtn = document.querySelector('.signup');
-const formbG = document.querySelector('.formbG');
 const rainDrops = [];
-for( let x = 0; x < columns; x++ ) {
+for (let x = 0; x < columns; x++) {
     rainDrops[x] = 1;
 }
 const draw = () => {
@@ -20,20 +19,20 @@ const draw = () => {
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = '#00FF41';
     context.font = fontSize + 'px monospace';
-    for(let i = 0; i < rainDrops.length; i++) {
+    for (let i = 0; i < rainDrops.length; i++) {
         const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-        context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
-        if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+        context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             rainDrops[i] = 0;
         }
         rainDrops[i]++;
     }
 };
 setInterval(draw, 60);
-signupBtn.onclick = function(){
+signupBtn.onclick = function () {
     formbG.classList.add('left')
 }
-signinBtn.onclick = function(){
+signinBtn.onclick = function () {
     formbG.classList.remove('left')
     formbG.classList.add('right')
 }
