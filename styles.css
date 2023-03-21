@@ -83,6 +83,10 @@ canvas {
     box-shadow: inset 2px 2px 2px rgba(167, 166, 166, 0.46);
 }
 
+.loginbG .box #rotate {
+    rotate: 180deg;
+}
+
 .formbG {
     position: absolute;
     top: 0;
@@ -148,7 +152,7 @@ canvas {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: solid 1.4px #333;
+    border-bottom: solid 1.4px rgb(86, 86, 86);
 }
 
 .formbG .loginForm form #blank:focus {
@@ -193,7 +197,7 @@ canvas {
 
 .formbG .loginForm a span {
     text-decoration: none;
-    color: rgb(244, 98, 98);
+    color: rgb(224 24 24);
     transition: 0.5s ease-in-out;
 }
 
@@ -232,7 +236,7 @@ canvas {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: solid 1.4px #333;
+    border-bottom: solid 1.4px rgb(86, 86, 86);
 }
 
 .formbG .signupForm form #blank:focus {
@@ -259,27 +263,32 @@ canvas {
     padding: 12px;
     background: linear-gradient(to left, #00FF41, #00ff9d);
     transition: 0.5s ease-in-out;
-    
+    box-shadow: inset 4px 4px 6px #adfdc1;
 }
 
 .formbG .signupForm form #btn:hover {
     transition: 0.5s ease-in-out;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 4px 4px 6px #72727277;
+    background: #000;
+    color: #00FF41;
 }
 
 .formbG.left .signupForm {
     left: 0;
-    transition-delay: 0.25s;
+    transition-delay: 0.30s;
 }
 
 .formbG .signupForm {
     left: 100%;
-    transition-delay: 0.25s;
+}
+
+.formbG.right .signupForm {
+    right: 100%;
+    transition-delay: 0.30s;
 }
 
 @media (max-width: 991px) {
     * {
-        overflow: none;
         user-select: none;
     }
     .container {
@@ -315,5 +324,38 @@ canvas {
     .formbG.left {
         top: 150px;
         left: 0;
+    }
+    .formbG .signupForm {
+        position: absolute;
+        top: 100%;
+        bottom: 10%;
+        left: 0;
+    }
+    .formbG.left .signupForm {
+        bottom: 100%;
+        left: 0;
+        top: 10%;
+        transition-delay: 0.10s;
+    } 
+    .formbG.right .signupForm {
+        top: 100%;
+        left: 0;
+        transition-delay: 0.25s;
+    }
+    .formbG .loginForm {
+        position: absolute;
+        top: 10%;
+        bottom: 100%;
+        left: 0;
+    }
+    .formbG.left .loginForm {
+        top: -100%;
+        left: 0;
+        transition-delay: 0.10s;
+    }
+    .formbG.right .loginForm {
+        top: 10%;
+        left: 0;
+        transition-delay: 0.25s;
     }
 }
